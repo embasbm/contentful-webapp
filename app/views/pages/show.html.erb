@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+  <h1><%= @recipe.title %></h1>
+  <img src="<%= @recipe.photo.image_url %>" />
+  <% @tags.each do |tag| %>
+    <p><%= tag.name %></p>
+  <% end %>
+  <p><%= @recipe.description %></p>
+  <p><%= @chef ? @chef.name : '' %></p>
+</div>
+
+<%= link_to 'Back', pages_index_path %>

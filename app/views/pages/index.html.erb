@@ -1,0 +1,21 @@
+<h1>Recipes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr><td>
+          <h2><%= recipe.title %></h2>
+      </td></tr>
+
+      <tr><td>
+          <%= link_to image_tag(recipe.photo.image_url, :alt => "Recipe Photo"), pages_show_path(id: recipe.id) %>
+      </td></tr>
+    <% end %>
+  </tbody>
+</table>
